@@ -21,10 +21,20 @@
             console.log('desconectado del servidor')
         });
 
-        socket.emit('mensaje', {nombre:'Leon'});
+        // socket.emit('mensaje', {nombre:'Leon'});
 
-        socket.on('mensaje', function( payload) {
-            console.log('escuchando:', payload);
+        // socket.on('mensaje', function( payload) {
+        //     console.log('escuchando:', payload);
+        // });
+
+        socket.on('nuevo-mensaje', function( payload) {
+            console.log('MENSAJE');
+            console.log(payload);
+        });
+
+        socket.on('active-bands', function(bands){
+            console.clear();
+            console.table(bands);
         });
     </script>
 
